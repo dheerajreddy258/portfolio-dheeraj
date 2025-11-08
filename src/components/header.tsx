@@ -27,7 +27,7 @@ export default function Header() {
         <div className="mr-4 flex items-center">
           <Link href="/" className="mr-6 flex items-center space-x-2">
             <Bot className="h-6 w-6 text-primary" />
-            <span className="font-bold">NeonFolio</span>
+            <span className="font-bold">Dheeraj Reddy Pullela</span>
           </Link>
           <nav className="hidden gap-6 text-sm md:flex">
             {navLinks.map((link) => (
