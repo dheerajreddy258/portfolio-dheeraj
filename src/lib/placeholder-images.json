@@ -5,6 +5,12 @@
       "description": "A placeholder image for a task management system project.",
       "imageUrl": "https://images.unsplash.com/photo-1542626991-cbc4e32524cc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHx0YXNrJTIwbWFuYWdlbWVudHxlbnwwfHx8fDE3NjI3MTM4MDV8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "task management"
+    },
+    {
+      "id": "expense-tracker",
+      "description": "A placeholder image for an expense tracker project.",
+      "imageUrl": "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxmZW5zZSUyMHRyYWNrZXJ8ZW58MHx8fHwxNzYzNTk0MzMyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "finance budget"
     }
   ]
 }

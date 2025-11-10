@@ -3,7 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
-import { Github } from "lucide-react";
+import { Github, ExternalLink } from "lucide-react";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 
 const projects = [
@@ -16,6 +16,17 @@ const projects = [
         ],
         technologies: ["Angular", "Spring Boot", "MySQL"],
         githubUrl: "https://github.com/dheerajreddy258/TMS",
+        liveUrl: null,
+    },
+    {
+        title: "Expense Tracker",
+        image: PlaceHolderImages.find(p => p.id === 'expense-tracker'),
+        description: [
+            "Developed a React-based expense tracker application with budgeting features, allowing users to add, categorize, filter, and manage expenses."
+        ],
+        technologies: ["React", "HTML", "CSS"],
+        githubUrl: "https://github.com/dheerajreddy258/expense-tracker.git",
+        liveUrl: "https://expense-tracker-d.netlify.app/",
     }
 ];
 
@@ -64,6 +75,14 @@ export default function ProjectsSection() {
                                 </div>
                             </CardContent>
                             <CardFooter className="flex justify-end gap-2">
+                                {project.liveUrl && (
+                                     <Link href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                                        <Button>
+                                            <ExternalLink className="mr-2 h-4 w-4" />
+                                            Live Demo
+                                        </Button>
+                                    </Link>
+                                )}
                                 <Link href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                                     <Button variant="outline">
                                         <Github className="mr-2 h-4 w-4" />
