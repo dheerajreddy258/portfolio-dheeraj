@@ -19,7 +19,7 @@ export default function ContactSection() {
         </div>
         <div className="mx-auto w-full max-w-lg space-y-6 pt-12 text-center">
           <div className="flex flex-col gap-4">
-            <Link href="https://www.linkedin.com/in/dheeraj-reddy-pullela/" target="_blank" rel="noopener noreferrer">
+            <Link href="https://www.linkedin.com/in/dheerajreddypullela/" target="_blank" rel="noopener noreferrer">
               <Button size="lg" className="w-full">
                 <Linkedin className="mr-2 h-5 w-5" />
                 Connect on LinkedIn
