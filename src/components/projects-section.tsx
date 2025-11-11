@@ -2,31 +2,27 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/componen
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import Image from "next/image";
 import { Github, ExternalLink } from "lucide-react";
-import { PlaceHolderImages } from "@/lib/placeholder-images";
 
 const projects = [
     {
         title: "Task Management System",
-        image: PlaceHolderImages.find(p => p.id === 'task-management-system'),
         description: [
             "Developed a Task Management System using Angular, Spring Boot, and MySQL to manage and track daily tasks efficiently.",
             "Implemented core features like user authentication, task CRUD operations, status tracking, and comments functionality."
         ],
         technologies: ["Angular", "Spring Boot", "MySQL"],
         githubUrl: "https://github.com/dheerajreddy258/TMS",
-        liveUrl: null,
+        liveUrl: null
     },
     {
         title: "Expense Tracker",
-        image: PlaceHolderImages.find(p => p.id === 'expense-tracker'),
         description: [
             "Developed a React-based expense tracker application with budgeting features, allowing users to add, categorize, filter, and manage expenses."
         ],
         technologies: ["React", "HTML", "CSS"],
         githubUrl: "https://github.com/dheerajreddy258/expense-tracker.git",
-        liveUrl: "https://expense-tracker-d.netlify.app/",
+        liveUrl: "https://expense-tracker-d.netlify.app/"
     }
 ];
 
@@ -43,25 +39,15 @@ export default function ProjectsSection() {
                         </p>
                     </div>
                 </div>
-                <div className="mx-auto grid max-w-5xl items-start gap-8 py-12 lg:grid-cols-1">
-                    {projects.map((project) => (
-                        <Card key={project.title} className="w-full bg-card">
+                <div className="mx-auto grid max-w-6xl items-start gap-8 py-12 lg:grid-cols-2">
+                    {projects.map((project) => {
+                        return (
+                        <Card key={project.title} className="w-full bg-card flex flex-col h-full overflow-hidden">
                             <CardHeader>
                                 <CardTitle>{project.title}</CardTitle>
                             </CardHeader>
-                            <CardContent className="grid gap-6 md:grid-cols-5">
-                                <div className="relative col-span-5 md:col-span-2 aspect-video overflow-hidden rounded-lg">
-                                    {project.image && (
-                                      <Image
-                                        src={project.image.imageUrl}
-                                        alt={project.title}
-                                        fill
-                                        className="object-cover"
-                                        data-ai-hint={project.image.imageHint}
-                                      />
-                                    )}
-                                </div>
-                                <div className="col-span-5 md:col-span-3 flex flex-col justify-center space-y-4">
+                            <CardContent className="grid gap-6 flex-grow">
+                                <div className="flex flex-col justify-center space-y-4">
                                     <ul className="list-disc space-y-2 pl-5 text-left text-sm text-foreground/80">
                                         {project.description.map((point, index) => (
                                             <li key={index}>{point}</li>
@@ -74,7 +60,7 @@ export default function ProjectsSection() {
                                     </div>
                                 </div>
                             </CardContent>
-                            <CardFooter className="flex justify-end gap-2">
+                            <CardFooter className="flex justify-end gap-2 mt-auto">
                                 {project.liveUrl && (
                                      <Link href={project.liveUrl} target="_blank" rel="noopener noreferrer">
                                         <Button>
@@ -83,15 +69,18 @@ export default function ProjectsSection() {
                                         </Button>
                                     </Link>
                                 )}
+                                {project.githubUrl && (
                                 <Link href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                                     <Button variant="outline">
                                         <Github className="mr-2 h-4 w-4" />
                                         View Code
                                     </Button>
                                 </Link>
+                                )}
                             </CardFooter>
                         </Card>
-                    ))}
+                        )
+                    })}
                 </div>
             </div>
         </section>

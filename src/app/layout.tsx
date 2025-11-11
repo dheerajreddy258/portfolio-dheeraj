@@ -3,7 +3,7 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
-  title: 'NeonFolio',
+  title: 'Dheeraj Reddy',
   description: 'A futuristic portfolio for a GenAI/ML enthusiast.',
 };
 
